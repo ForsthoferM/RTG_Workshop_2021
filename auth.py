@@ -21,8 +21,17 @@ def authenticate(username, password, pwdb):
         else:
             print('Wrong password!')
     else:
-        print('User not known!')
+        add_user(username, password, pwdb)
     return auth
+
+def add_user(username, password, pwdb):
+    response = input('Do you want to create a new user? [y/n]')
+    if response == 'y':
+        pwdb[username] = password
+        write_pwdb(pwdb)
+    else: 
+        print('User not added')
+    
 
 def write_pwdb(pwdb):
     with open('pwdb.json', 'wt') as pwdb_file:
@@ -30,10 +39,10 @@ def write_pwdb(pwdb):
     print('Pwdb written!')
 # with: context, this will open the file and close it afterwards. 'wt' is for write text
     
-def read_pwdb(pwdb_file):
+def read_pwdb():
     with open('pwdb.json', 'rt') as pwdb_file:
         pwdb = json.load(pwdb_file)
-        return pwdb
+    return pwdb
 # 'rt' for read text
 
 username, password = get_credentials()

@@ -7,7 +7,9 @@ Created on Tue Oct 19 09:27:14 2021
 
 import json
 
-#test for new branch
+#all branches stuff
+
+print('This should show up in both branches')
 
 def get_credentials():
     """input user credentials"""

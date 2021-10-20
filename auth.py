@@ -8,9 +8,10 @@ Created on Tue Oct 19 09:27:14 2021
 import json
 
 def get_credentials():
-        username = input('Type username: ')
-        password = input('Type password: ')
-        return username, password
+    """input user credentials"""
+    username = input('Type username: ')
+    password = input('Type password: ')
+    return username, password
     
 def authenticate(username, password, pwdb):
     auth = False
@@ -31,6 +32,8 @@ def add_user(username, password, pwdb):
         write_pwdb(pwdb)
     else: 
         print('User not added')
+        #add new user
+        raise NotImplementedError('Why are you so lazy?')
     
 
 def write_pwdb(pwdb):

@@ -7,6 +7,8 @@ Created on Tue Oct 19 09:27:14 2021
 
 import json
 
+#test for new branch
+
 def get_credentials():
     """input user credentials"""
     username = input('Type username: ')
@@ -47,6 +49,7 @@ def read_pwdb():
         pwdb = json.load(pwdb_file)
     return pwdb
 # 'rt' for read text
+
 
 username, password = get_credentials()
 pwdb = read_pwdb()
